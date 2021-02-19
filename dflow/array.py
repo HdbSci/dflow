@@ -2,7 +2,7 @@
 #  dflow arrays module
 # with dfarray class
 
-import utils
+from utils import *
 
 
 # dfarray #
