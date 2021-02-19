@@ -1,6 +1,7 @@
 # DFLOW LIBRARY:
 #  dflow arrays module
-# with dfarray class
+# with dfarray class and
+# linspace function
 
 from utils import *
 
@@ -94,3 +95,8 @@ class dfarray:
     @property
     def list(self):
         return self.value.copy()
+
+
+# linspace #
+def linspace(_from, _to, _nums):
+    return dfarray(range(_from, _to, _nums / (_to - _from)))
