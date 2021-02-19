@@ -14,10 +14,10 @@ class dfarray:
             self.value.append(v)
 
     def __repr__(self):
-        return "dflow array with value {self.value}".format()
+        return "dflow array with value {}".format(self.value)
 
     def __str__(self):
-        return "dflow array with value {self.value}".format()
+        return "dflow array with value {}".format(self.value)
 
     def __add__(self, other):
         arr = self.value.copy()
