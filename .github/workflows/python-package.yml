@@ -28,7 +28,7 @@ jobs:
         pip install -U pytest
     - name: Test dflow package
       run: |
-        pytest --pyargs dflow
+        pytest tests --pyargs dflow
     - name: Build dflow wheel
       run: |
         python3 setup.py sdist bdist_wheel
