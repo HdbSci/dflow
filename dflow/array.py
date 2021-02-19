@@ -96,6 +96,38 @@ class dfarray:
     def list(self):
         return self.value.copy()
 
+def add(x, y):   # add elements of 2 dfarray
+    X = x.list
+    Y = y.list
+    res = dfarray([])
+    for i, j in zip(X, Y):
+        res << i + j
+    return res
+
+def sub(x, y):   # substract elements of 2 dfarray
+    X = x.list
+    Y = y.list
+    res = dfarray([])
+    for i, j in zip(X, Y):
+        res << i - j
+    return res
+
+def mul(x, y):   # multiply elements of 2 dfarray
+    X = x.list
+    Y = y.list
+    res = dfarray([])
+    for i, j in zip(X, Y):
+        res << i * j
+    return res
+
+def div(x, y):   # divide elements of 2 dfarray
+    X = x.list
+    Y = y.list
+    res = dfarray([])
+    for i, j in zip(X, Y):
+        res << i / j
+    return res
+
 
 # linspace #
 def linspace(_from, _to, _nums):
