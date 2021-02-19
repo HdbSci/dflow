@@ -3,7 +3,7 @@
 # with dfarray class and
 # linspace function
 
-from utils import *
+from dflow.utils import *
 
 
 # dfarray #
