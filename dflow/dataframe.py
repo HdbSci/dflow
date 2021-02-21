@@ -22,11 +22,14 @@ class dfdataframe:
     def __str__(self):
         return "dflow data frame object"
 
-    def at(self, row, column):
-        return self.rows[row][self.columns[column]]
+    def __getitem__(self, key: tuple):
+        return self.rows[key[0]][self.columns[key[1]]]
 
-    def assign(self, row, column, value):
-        self.rows[row].assign(self.columns[column], value)
+    def __setitem__(self, key: tuple, value):
+        self.rows[key[0]][self.columns[key[1]]] = value
+
+    def __delitem__(self, key: tuple):
+        self.rows[key[0]][self.columns[key[1]]] = None
 
     def row(self, name):
     	return self.rows[name]
