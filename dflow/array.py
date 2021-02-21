@@ -53,7 +53,7 @@ class dfarray:
         return self.value.pop(key - 1)
 
     def __contains__(self, item):
-    	if item in self.value:
+        if item in self.value:
             return True
         else:
             return False
