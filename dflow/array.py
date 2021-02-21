@@ -91,12 +91,10 @@ class dfarray:
     def copy(self):
         return dfarray(self.value.copy())
 
-    def plot(self, aply=lambda x: x):
+    def plot(self, title='dflow array graph'):
         import matplotlib.pyplot as plt
-        V = []
-        for v in self.value:
-            V.append(aply(v))
-        plt.plot(V)
+        plt.plot(self.value)
+        plt.title(title)
         plt.show()
 
     @property
