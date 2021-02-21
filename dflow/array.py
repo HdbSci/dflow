@@ -144,7 +144,7 @@ def zeros(num):
     res = dfarray([])
     for i in range(0, num):
         res << 0
-        return res
+    return res
 
 def ones(num):
     res = dfarray([])
