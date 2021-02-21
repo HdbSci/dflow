@@ -40,17 +40,17 @@ class dfarray:
     def __matmul__(self, other):
         return sum(x*y for x, y in zip(self.value, other.value))
 
-    def at(self, index: int):
+    def __getitem__(self, key):
         try:
-            return self.value[index - 1]
+            return self.value[key - 1]
         except IndexError:
             return None
 
-    def assign(self, index: int, value):
-    	self.value[index] = value
+    def __setitem__(self, key, value):
+    	self.value[key - 1] = value
 
-    def delete(self, index):
-        return self.value.pop(index - 1)
+    def __delitem__(self, key):
+        return self.value.pop(key - 1)
 
     @property
     def iter(self):
