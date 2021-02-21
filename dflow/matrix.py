@@ -35,6 +35,14 @@ class dfmatrix:
         return res
 
     @property
+    def dimension(self):
+        res = 0
+        for r in self.value.iter:
+            for c in r.iter:
+                res += 1
+        return res
+
+    @property
     def copy(self):
         return dfmatrix(self.list.copy())
 
