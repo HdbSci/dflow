@@ -17,3 +17,6 @@ class dfdataframe:
 
     def at(self, row, column):
         return self.rows[row][self.columns[column]]
+
+    def assign(self, row, column, value):
+        self.rows[row][self.columns[column]] = value
