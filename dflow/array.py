@@ -57,6 +57,10 @@ class dfarray:
         return self.value.copy()
 
     @property
+    def length(self):
+    	return len(self.value)
+
+    @property
     def sort(self):
         self.value = sorted(self.value)
 
