@@ -4,6 +4,7 @@
 # asCSV function
 
 from dflow import utils
+from dflow import array
 
 
 # dfdataframe #
@@ -13,10 +14,13 @@ class dfdataframe:
         self.columns=utils.dictenumerate(columns)
 
         for r, d in zip(rows, data):
-            self.rows[r] = d
+            self.rows[r] = array.dfarray(d)
 
     def at(self, row, column):
         return self.rows[row][self.columns[column]]
 
     def assign(self, row, column, value):
-        self.rows[row][self.columns[column]] = value
+        self.rows[row].assign(self.columns[column], value)
+
+    def row(self, name):
+    	return self.rows[name]
