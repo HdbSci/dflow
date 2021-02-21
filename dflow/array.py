@@ -46,6 +46,9 @@ class dfarray:
         except IndexError:
             return None
 
+    def assign(self, index: int, value):
+    	self.value[index] = value
+
     def append(self, data):
         self.value.append(data)
 
