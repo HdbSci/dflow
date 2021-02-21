@@ -18,3 +18,13 @@ def test_SortTest():
 	B = A.copy
 	B.sort
 	assert B.value == [1, 2, 3, 4]
+
+# zeros test
+def test_ZerosTest():
+	B = array.zeros(1)
+	assert B.list == [0]
+
+# ones test
+def test_OnesTest():
+	B = array.ones(1)
+	assert B.list == [1]
