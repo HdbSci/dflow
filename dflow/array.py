@@ -47,10 +47,16 @@ class dfarray:
             return None
 
     def __setitem__(self, key, value):
-    	self.value[key - 1] = value
+        self.value[key - 1] = value
 
     def __delitem__(self, key):
         return self.value.pop(key - 1)
+
+    def __contains__(self, item):
+    	if item in self.value:
+            return True
+        else:
+            return False
 
     @property
     def iter(self):
