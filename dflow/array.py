@@ -29,12 +29,12 @@ class dfarray:
         self.value.expand(other.value)
 
     def __lshift__(self, data):
-        self.append(data)
+        self.value.append(data)
 
     def __rshift__(self, num):
         data = []
         for n in range(0, num):
-            data.append(self.delete(0))
+            data.append(self.value.pop(-1))
         return dfarray(data)
 
     def __matmul__(self, other):
