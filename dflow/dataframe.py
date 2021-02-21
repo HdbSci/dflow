@@ -16,6 +16,12 @@ class dfdataframe:
         for r, d in zip(rows, data):
             self.rows[r] = array.dfarray(d)
 
+    def __repr__(self):
+        return "dflow data frame object"
+
+    def __str__(self):
+        return "dflow data frame object"
+
     def at(self, row, column):
         return self.rows[row][self.columns[column]]
 
