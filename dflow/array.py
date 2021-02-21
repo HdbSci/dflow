@@ -49,9 +49,6 @@ class dfarray:
     def assign(self, index: int, value):
     	self.value[index] = value
 
-    def append(self, data):
-        self.value.append(data)
-
     def delete(self, index):
         return self.value.pop(index - 1)
 
