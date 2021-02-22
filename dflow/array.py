@@ -76,6 +76,14 @@ class dfarray:
         self.value = sorted(self.value)
 
     @property
+    def sum(self):
+        return sum(self.value)
+
+    @property
+    def mean(self):
+        return self.sum / self.length
+
+    @property
     def reverse(self):
         self.value = self.value[::-1]
 
