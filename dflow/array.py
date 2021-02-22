@@ -167,3 +167,11 @@ def ones(num):
     for i in range(0, num):
         res << 1
     return res
+
+
+# arange #
+def arange(_to):
+    return dfarray(range(0, _to))
+
+def arange(_from, _to, step=1):
+    return dfarray(range(_from, _to, step))
