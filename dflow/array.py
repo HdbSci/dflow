@@ -4,6 +4,7 @@
 # linspace function
 
 from dflow.utils import *
+from dflow.error import *
 
 
 # dfarray #
@@ -11,6 +12,8 @@ class dfarray:
     def __init__(self, value):
         self.value = []
         for v in value:
+            if type(v) != int and type(v) != float:
+                raise dfArrayError("dfarray type error: dfarray objects must contain numbers")
             self.value.append(v)
 
     def __repr__(self):
@@ -29,6 +32,8 @@ class dfarray:
         self.value.expand(other.value)
 
     def __lshift__(self, data):
+        if type(data) != int and type(data) != float:
+            raise dfArrayError("dfarray type error: dfarray objects must contain numbers")
         self.value.append(data)
 
     def __rshift__(self, num):
