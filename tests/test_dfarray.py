@@ -2,7 +2,7 @@ import pytest
 from dflow import array
 
 
-A = array.dfarray([3, 2, 4, 1])
+A = array.dfarray(3, 2, 4, 1)
 
 
 # __str__ test

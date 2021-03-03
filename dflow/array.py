@@ -9,9 +9,9 @@ from dflow.error import *
 
 # dfarray #
 class dfarray:
-    def __init__(self, value):
+    def __init__(self, *args):
         self.value = []
-        for v in value:
+        for v in args:
             if type(v) != int and type(v) != float:
                 raise dfArrayError("dfarray type error: dfarray objects must contain numbers")
             self.value.append(v)
@@ -105,7 +105,7 @@ class dfarray:
 
     @property
     def copy(self):
-        return dfarray(self.value.copy())
+        return dfarray(*self.value.copy())
 
     def plot(self, title='dflow array graph'):
         import matplotlib.pyplot as plt
@@ -120,7 +120,7 @@ class dfarray:
 def add(x, y):   # add elements of 2 dfarray
     X = x.list
     Y = y.list
-    res = dfarray([])
+    res = dfarray()
     for i, j in zip(X, Y):
         res << i + j
     return res
@@ -128,7 +128,7 @@ def add(x, y):   # add elements of 2 dfarray
 def sub(x, y):   # substract elements of 2 dfarray
     X = x.list
     Y = y.list
-    res = dfarray([])
+    res = dfarray()
     for i, j in zip(X, Y):
         res << i - j
     return res
@@ -136,7 +136,7 @@ def sub(x, y):   # substract elements of 2 dfarray
 def mul(x, y):   # multiply elements of 2 dfarray
     X = x.list
     Y = y.list
-    res = dfarray([])
+    res = dfarray()
     for i, j in zip(X, Y):
         res << i * j
     return res
@@ -144,7 +144,7 @@ def mul(x, y):   # multiply elements of 2 dfarray
 def div(x, y):   # divide elements of 2 dfarray
     X = x.list
     Y = y.list
-    res = dfarray([])
+    res = dfarray()
     for i, j in zip(X, Y):
         res << i / j
     return res
@@ -152,18 +152,18 @@ def div(x, y):   # divide elements of 2 dfarray
 
 # linspace #
 def linspace(_from, _to, _nums):
-    return dfarray(range(_from, _to, _nums / (_to - _from)))
+    return dfarray(*range(_from, _to, _nums / (_to - _from)))
 
 
 # zeros & ones #
 def zeros(num):
-    res = dfarray([])
+    res = dfarray()
     for i in range(0, num):
         res << 0
     return res
 
 def ones(num):
-    res = dfarray([])
+    res = dfarray()
     for i in range(0, num):
         res << 1
     return res
