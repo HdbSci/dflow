@@ -4,6 +4,7 @@
 # sin, cos, exp... and
 # consts like e or pi
 
+# constants #
 π = 3.1415926535
 pi = π
 
@@ -11,3 +12,10 @@ pi = π
 phi = φ
 
 e = 2.7182818284
+
+
+# functions #
+sinh = lambda x: e**x - e**-x
+cosh = lambda x: e**x + e**-x
+
+tanh = lambda x: sinh(x) / cosh(x)
