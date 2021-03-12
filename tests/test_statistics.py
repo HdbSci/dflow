@@ -7,7 +7,7 @@ dataset = dfarray(1, 3, 3, 2, 1.5, -2)
 
 # mean test
 def test_MeanTest():
-    assert dataset.mean.round(4) == 1.4166
+    assert dataset.mean == 1.4166666666666667
 
 # median test
 def test_MedianTest():
