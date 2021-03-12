@@ -84,6 +84,15 @@ class dfarray:
         return self.sum / self.length
 
     @property
+    def median(self):
+        d = self.copy
+        d.sort
+        if d.length % 2 == 0:
+            return dfarray([int(d.values[d.length/2]), int(d.values[d.length/2+1])]).mean
+        else:
+            return d.values[int(d.length/2)]
+
+    @property
     def reverse(self):
         self.value = self.value[::-1]
 
