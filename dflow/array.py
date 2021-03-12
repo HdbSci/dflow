@@ -93,6 +93,24 @@ class dfarray:
             return d.values[int(d.length/2)]
 
     @property
+    def mode(self):
+        data = {}
+        vals = self.values.copy()
+        maximum = [None, 0]
+
+        for d in vals:
+            try:
+                data[d] += 1
+            except Exception:
+                data[d] = 1 
+
+        for d in data:
+            if max(maximum[1], data[d]) == data[d]:
+                maximum = [d, data[d]]
+            else: pass
+            return maximum[0]
+
+    @property
     def reverse(self):
         self.value = self.value[::-1]
 
