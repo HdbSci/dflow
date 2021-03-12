@@ -15,4 +15,4 @@ def test_MedianTest():
 
 # mode test
 def test_ModeTest():
-    assert dataset.mode[0] == 3
+    assert dataset.mode == 3

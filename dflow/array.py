@@ -90,14 +90,28 @@ class dfarray:
         d = self.copy
         d.sort
         if d.length % 2 == 0:
-            return dfarray([d.value[d.length//2], d.value[d.length//2+1]]).mean
+            return dfarray(d.value[d.length//2], d.value[d.length//2+1]).mean
         else:
             return d.values[d.length//2]
 
     @property
     def mode(self):
-        c = Counter(self.value.copy)
-        return [k for k, v in c.items() if v == c.most_common(1)[0][1]]
+        data = {}
+        vals = self.values.copy()
+        maximum = [None, 0]
+
+        for d in vals:
+          try:
+            data[d] += 1
+          except Exception:
+            data[d] = 1 
+
+        for d in data:
+          if max(maximum[1], data[d]) == data[d]:
+            maximum = [d, data[d]]
+          else: pass
+
+        return maximum[0]
 
     @property
     def reverse(self):
