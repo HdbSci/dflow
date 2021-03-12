@@ -88,14 +88,14 @@ class dfarray:
         d = self.copy
         d.sort
         if d.length % 2 == 0:
-            return dfarray([int(d.values[d.length/2]), int(d.values[d.length/2+1])]).mean
+            return dfarray([int(d.value[d.length/2]), int(d.value[d.length/2+1])]).mean
         else:
             return d.values[int(d.length/2)]
 
     @property
     def mode(self):
         data = {}
-        vals = self.values.copy()
+        vals = self.value.copy()
         maximum = [None, 0]
 
         for d in vals:
