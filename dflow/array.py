@@ -6,7 +6,7 @@
 from dflow.utils import *
 from dflow.error import *
 
-from collections import Counter
+import random as rd
 
 
 # dfarray #
@@ -205,3 +205,11 @@ def arange(_to):
 
 def arange(_from, _to, step=1):
     return dfarray(range(_from, _to, step))
+
+
+# randlist #
+def randlist(*args):
+    res = dfarray()
+    for i in range(sum(args)):
+        res << rd.random()
+    return res
