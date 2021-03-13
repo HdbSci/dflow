@@ -4,9 +4,14 @@
 # module with linspace,
 # arange, randlist...
 
+from dflow.array import dfarray
+from dflow.utils import range
+
+
 # linspace #
 def linspace(_from, _to, _nums):
-    return dfarray(*range(_from, _to, _nums / (_to - _from)))
+    lst = range(_from, _to, (_to - _from) / _nums)
+    return dfarray(*lst)
 
 
 # zeros & ones #
