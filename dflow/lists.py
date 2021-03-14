@@ -7,6 +7,8 @@
 from dflow.array import dfarray
 from dflow.utils import range
 
+import random as rd
+
 
 # linspace #
 def linspace(_from, _to, _nums):
@@ -29,16 +31,13 @@ def ones(num):
 
 
 # arange #
-def arange(_to):
-    return dfarray(range(0, _to))
-
 def arange(_from, _to, step=1):
-    return dfarray(range(_from, _to, step))
+    return dfarray(*range(_from, _to, step))
 
 
 # randlist #
 def randlist(*args):
     res = dfarray()
-    for i in range(sum(args)):
+    for i in range(0, sum(args)):
         res << rd.random()
     return res

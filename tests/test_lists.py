@@ -22,3 +22,13 @@ def test_ZerosAndOnes():
     a.aply(lambda x: x**2)
 
     assert a.list == A.list
+
+# arange test
+def test_ArangeTest():
+    a = lists.arange(_from=0, _to=10, step=1)
+    assert a.length == 10
+
+# randlist test
+def test_RandlistTest():
+    a = lists.randlist(1, 2, 4)
+    assert a.length == 7
