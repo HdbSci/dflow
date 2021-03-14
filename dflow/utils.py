@@ -13,3 +13,9 @@ def range(_from, _to, step=1):
 
 def dictenumerate(d):
     return {k: v for v, k in enumerate(d)}
+
+def prod(x):
+    res = 1
+    for X in x:
+        res *= X
+    return res

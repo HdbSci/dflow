@@ -31,4 +31,4 @@ def test_ArangeTest():
 # randlist test
 def test_RandlistTest():
     a = lists.randlist(1, 2, 4)
-    assert a.length == 7
+    assert a.length == 8

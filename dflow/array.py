@@ -81,6 +81,10 @@ class dfarray:
         return sum(self.value)
 
     @property
+    def prod(self):
+        return prod(self.value)
+
+    @property
     def mean(self):
         return self.sum / self.length
 

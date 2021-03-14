@@ -5,7 +5,7 @@
 # arange, randlist...
 
 from dflow.array import dfarray
-from dflow.utils import range
+from dflow.utils import range, prod
 
 import random as rd
 
@@ -38,6 +38,6 @@ def arange(_from, _to, step=1):
 # randlist #
 def randlist(*args):
     res = dfarray()
-    for i in range(0, sum(args)):
+    for i in range(0, prod(args)):
         res << rd.random()
     return res
