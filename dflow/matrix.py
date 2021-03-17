@@ -28,6 +28,10 @@ class dfmatrix:
         return res
 
     @property
+    def rows(self):
+        return self.value.length
+
+    @property
     def iter(self):
         res = []
         for l in self.value.iter:
@@ -35,12 +39,8 @@ class dfmatrix:
         return res
 
     @property
-    def dimension(self):
-        res = 0
-        for r in self.value.iter:
-            for c in r.iter:
-                res += 1
-        return res
+    def shape(self):
+        return [self.value.length, self.value[1].length]
 
     @property
     def copy(self):
