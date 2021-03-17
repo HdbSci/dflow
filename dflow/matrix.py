@@ -3,6 +3,7 @@
 # with dfmatrix class
 
 from dflow.array import dfarray
+from dflow.matrices import zeros
 
 
 # dfmatrix #
@@ -19,9 +20,19 @@ class dfmatrix:
         self.value[loc[0]][loc[1]] = loc[2]
 
     def __matmul__(self, other):
-        x = self.list
-        y = self.list
-        # TODO: Write matrix multiplication
+        x  = self.list
+        xS = self.shape
+        
+        y  = other.list
+        yS = other.shape
+
+        res = zeros(max([xS[0], yS[0]]), max([xS[1], yS[1]]))
+
+        for i in range(len(x)):
+            for j in range(len(y[0])):
+                for k in range(len(y)):
+                    res[i][j] += x[i][k] * y[k][j]
+        return res
 
     def row(self, index):
         return self.value.at(index)
