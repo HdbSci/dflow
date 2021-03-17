@@ -13,6 +13,18 @@ class dfmatrix:
         for m in mat:
             self.value << dfarray(m)
 
+    def __repr__(self):
+        res = 'dflow matrix with the following values:\n'
+        for k in self.iter:
+            res += str(k) + '\n'
+        return res
+
+    def __str__(self):
+        res = 'dflow matrix with the following values:\n'
+        for k in self.iter:
+            res += str(k) + '\n'
+        return res
+
     def __getitem__(self, *loc):
         return self.value[loc[0]][loc[1]]
 
