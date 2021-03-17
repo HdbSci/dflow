@@ -12,6 +12,12 @@ class dfmatrix:
         for m in mat:
             self.value << dfarray(m)
 
+    def __getitem__(self, *loc):
+        return self.value[loc[0]][loc[1]]
+
+    def __setitem__(self, *loc):
+        self.value[loc[0]][loc[1]] = loc[2]
+
     def __matmul__(self, other):
         x = self.list
         y = self.list
